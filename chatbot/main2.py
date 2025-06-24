@@ -5,6 +5,7 @@ from dotenv import load_dotenv
 from fastapi import APIRouter, Request, Form
 from starlette.responses import Response
 from twilio.twiml.messaging_response import MessagingResponse
+from chatbot.utils import log_user_state
 
 load_dotenv()
 
@@ -19,50 +20,7 @@ try:
         national_lab_names = set(line.strip().lower() for line in file if line.strip())
 except FileNotFoundError:
     print("⚠️ National_Lab.txt not found. National lab filtering will be skipped.")
-
         
-def save_user_data(
-    phone_raw,
-    step,
-    user_message,
-    pincode="",
-    test_name="",
-    lab_name="",
-    patient_name="",
-    patient_age="",
-    patient_gender="",
-    adress="",
-    preferred_date="",
-    preferred_time="",
-    payment_status="",
-    booking_status=""    
-):
-    phone = phone_raw.replace("whatsapp:", "").replace("+", "")
-    file_name = os.path.join("responses", f"user_responses_{phone}.csv")
-
-    os.makedirs("responses", exist_ok=True)
-    is_new_file = not os.path.exists(file_name)
-
-    with open(file_name, mode="a", newline='', encoding="utf-8") as file:
-        writer = csv.writer(file)
-        if is_new_file:
-            writer.writerow([
-                "Timestamp", "Phone", "Step", "UserMessage",
-                "Pincode", "TestName", "LabName",
-                "PatientName", "Age", "Gender",
-                "Address", "PreferredDate",
-                "PreferredTime",
-                "PaymentStatus", "BookingStatus"            
-            ])
-        writer.writerow([
-            datetime.now().isoformat(), phone, step, user_message,
-            pincode, test_name, lab_name,
-            patient_name, patient_age, patient_gender,
-            adress, preferred_date, preferred_time,
-            payment_status, booking_status            
-        ])
-
-
 @router.post("/whatsapp")
 
 async def whatsapp_webhook(
