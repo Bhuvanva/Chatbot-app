@@ -154,7 +154,7 @@ async def whatsapp_webhook(
             state[""] = msg.upper()
             try:
                 async with httpx.AsyncClient() as client:
-                    api_url = f"http://localhost:8000/api/v1/labs/nearby-labs/{state['pincode']}?test_name={state['test_name']}"
+                    api_url = f"https://labbuddy-chatbot-app.onrender.com/api/v1/labs/nearby-labs/{state['pincode']}?test_name={state['test_name']}"
                     res = await client.get(api_url)
                     if res.status_code == 200:
                         labs = res.json()
@@ -193,7 +193,7 @@ async def whatsapp_webhook(
             state[""] = msg.upper()
             try:
                 async with httpx.AsyncClient() as client:
-                    api_url = f"http://localhost:8000/api/v1/labs/nearby-labs/{state['pincode']}?test_name={state['test_name']}"
+                    api_url = f"https://labbuddy-chatbot-app.onrender.com/api/v1/labs/nearby-labs/{state['pincode']}?test_name={state['test_name']}"
                     res = await client.get(api_url)
                     if res.status_code == 200:
                         labs = res.json()
@@ -266,7 +266,7 @@ async def whatsapp_webhook(
             state[""] = msg.upper()
             try:
                 async with httpx.AsyncClient() as client:
-                    api_url = f"http://localhost:8000/api/v1/labs/nearby-labs/{state['pincode']}?test_name={state['test_name']}"
+                    api_url = f"https://labbuddy-chatbot-app.onrender.com/api/v1/labs/nearby-labs/{state['pincode']}?test_name={state['test_name']}"
                     res = await client.get(api_url)
                     if res.status_code == 200:
                         labs = res.json()
@@ -306,7 +306,7 @@ async def whatsapp_webhook(
             state[""] = msg.upper()
             try:
                 async with httpx.AsyncClient() as client:
-                    api_url = f"http://localhost:8000/api/v1/labs/nearby-labs/{state['pincode']}?test_name={state['test_name']}"
+                    api_url = f"https://labbuddy-chatbot-app.onrender.com/api/v1/labs/nearby-labs/{state['pincode']}?test_name={state['test_name']}"
                     res = await client.get(api_url)
                     if res.status_code == 200:
                         labs = res.json()
@@ -365,7 +365,7 @@ async def whatsapp_webhook(
             state[""] = msg.upper()
             try:
                 async with httpx.AsyncClient() as client:
-                    api_url = f"http://localhost:8000/api/v1/labs/nearby-labs/{state['pincode']}?test_name={state['test_name']}"
+                    api_url = f"https://labbuddy-chatbot-app.onrender.com/api/v1/labs/nearby-labs/{state['pincode']}?test_name={state['test_name']}"
                     res = await client.get(api_url)
                     if res.status_code == 200:
                         labs = res.json()
@@ -398,7 +398,7 @@ async def whatsapp_webhook(
             state[""] = msg.upper()
             try:
                 async with httpx.AsyncClient() as client:
-                    api_url = f"http://localhost:8000/api/v1/labs/nearby-labs/{state['pincode']}?test_name={state['test_name']}"
+                    api_url = f"https://labbuddy-chatbot-app.onrender.com/api/v1/labs/nearby-labs/{state['pincode']}?test_name={state['test_name']}"
                     res = await client.get(api_url)
                     if res.status_code == 200:
                         labs = res.json()
