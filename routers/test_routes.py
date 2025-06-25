@@ -1,12 +1,12 @@
 from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
 from typing import List
-from app.config.database import get_db
-from app.models.testname import TestName
-from app.models.testpricing import TestPricing
-from app.models.lab_vendor import LabVendor
-from app.models.lab_type import LabType
-from app.schemas.testname import TestNameResponse, LabVendorPricing
+from chatbot.config.database import get_db
+from chatbot.models.testname import TestName
+from chatbot.models.testpricing import TestPricing
+from chatbot.models.lab_vendor import LabVendor
+from chatbot.models.lab_type import LabType
+from chatbot.schemas.testname import TestNameResponse, LabVendorPricing
 from sqlalchemy import select, join
 
 router = APIRouter()

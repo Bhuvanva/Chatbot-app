@@ -2,11 +2,11 @@ from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
 from sqlalchemy import select, and_, func, text
 from typing import List, Optional, Tuple
-from app.config.database import get_db
-from app.models.lab_vendor import LabVendor
-from app.models.lab_vendor_addresses import LabVendorAddresses
-from app.models.users import Users
-from app.schemas.lab_vendor import NearbyLabResponse, ServicesModel
+from chatbot.config.database import get_db
+from chatbot.models.lab_vendor import LabVendor
+from chatbot.models.lab_vendor_addresses import LabVendorAddresses
+from chatbot.models.users import Users
+from chatbot.schemas.lab_vendor import NearbyLabResponse, ServicesModel
 import logging
 import requests
 import math

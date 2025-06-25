@@ -1,0 +1,38 @@
+from sqlalchemy import Column, BigInteger, String, Integer, Boolean, DateTime, Numeric, DECIMAL
+from app.models.base import Base
+
+class Users(Base):
+    __tablename__ = 'users'
+
+    id = Column(BigInteger, primary_key=True, autoincrement=True)
+    fullName = Column(String(255))
+    mobileNo = Column(String(255))
+    email = Column(String(255))
+    password = Column(String(128), nullable=False)
+    isActive = Column(Boolean, nullable=False)
+    isDeleted = Column(Boolean, nullable=False)
+    isVerified = Column(Integer, nullable=False)
+    userType = Column(Integer)
+    deviceToken = Column(String(255))
+    updatedAt = Column(DateTime(6), nullable=False)
+    last_login = Column(DateTime(6), nullable=False)
+    isWalkIn = Column(Boolean)
+    latitude = Column(DECIMAL(30,6))
+    longitude = Column(DECIMAL(30,6))
+    time_delete = Column(DateTime(6))
+    commission_percentage = Column(Integer)
+    is_staff = Column(Boolean, nullable=False)
+    is_superuser = Column(Boolean, nullable=False)
+    createdAt = Column(DateTime(6), nullable=False)
+    isLogin = Column(Boolean, nullable=False)
+    deviceType = Column(Integer)
+    age = Column(String(255))
+    gender = Column(Integer)
+    otp = Column(Integer)
+    termcondition = Column(Boolean, nullable=False)
+    updateotp = Column(Integer)
+    profileImage = Column(String(255))
+    socialProviderId = Column(String(255))
+    socialType = Column(Integer)
+    belongsTo = Column(Integer)
+    isFamilyMember = Column(Boolean, nullable=False) 
