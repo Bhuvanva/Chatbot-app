@@ -22,7 +22,7 @@ try:
 except FileNotFoundError:
     print("⚠️ National_Lab.txt not found. National lab filtering will be skipped.")
         
-@router.post("/whatsapp", methods=["GET", "POST"])
+@router.post("/whatsapp")
 
 async def whatsapp_webhook(
     request: Request,
