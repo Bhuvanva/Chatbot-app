@@ -14,7 +14,15 @@ DB_HOST = os.getenv("DB_HOST")
 DB_PORT = os.getenv("DB_PORT")
 DB_NAME = os.getenv("DB_NAME")
 
-DATABASE_URL = f"mysql+aiomysql://{DB_USER}:{DB_PASSWORD}@{DB_HOST}:{DB_PORT}/{DB_NAME}"
+assert DB_USER, "DB_USER not set"
+assert DB_PASSWORD, "DB_PASSWORD not set"
+assert DB_HOST, "DB_HOST not set"
+assert DB_NAME, "DB_NAME not set"
+
+if DB_PORT:
+    DATABASE_URL = f"mysql+aiomysql://{DB_USER}:{DB_PASSWORD}@{DB_HOST}:{DB_PORT}/{DB_NAME}"
+else:
+    DATABASE_URL = f"mysql+aiomysql://{DB_USER}:{DB_PASSWORD}@{DB_HOST}/{DB_NAME}"
 
 engine = create_async_engine(DATABASE_URL, echo=False)
 
