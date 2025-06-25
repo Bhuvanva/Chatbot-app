@@ -1,7 +1,7 @@
 from sqlalchemy import Column, String, ForeignKey, BigInteger
 from sqlalchemy.orm import relationship
-from app.models.base import Base
-from app.models.lab_vendor import LabVendor
+from chatbot.models.base import Base
+from chatbot.models.lab_vendor import LabVendor
 
 class LabType(Base):
     __tablename__ = 'lab_type'

@@ -1,7 +1,7 @@
 from sqlalchemy import Column, BigInteger, String, DateTime, Time, Integer, Numeric, Boolean, JSON, ForeignKey
 from sqlalchemy.orm import relationship
-from app.models.lab_vendor_addresses import LabVendorAddresses  # Ensure model is registered
-from app.models.base import Base
+from chatbot.models.lab_vendor_addresses import LabVendorAddresses  # Ensure model is registered
+from chatbot.models.base import Base
 
 class LabVendor(Base):
     __tablename__ = 'lab_vendor'

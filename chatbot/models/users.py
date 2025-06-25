@@ -1,5 +1,5 @@
 from sqlalchemy import Column, BigInteger, String, Integer, Boolean, DateTime, Numeric, DECIMAL
-from app.models.base import Base
+from chatbot.models.base import Base
 
 class Users(Base):
     __tablename__ = 'users'

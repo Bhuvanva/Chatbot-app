@@ -1,6 +1,6 @@
 from sqlalchemy import Column, BigInteger, String, DateTime, ForeignKey
 from sqlalchemy.orm import relationship
-from app.models.base import Base
+from chatbot.models.base import Base
 
 class LabVendorAddresses(Base):
     __tablename__ = 'lab_vendor_addresses'

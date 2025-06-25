@@ -1,5 +1,5 @@
 from sqlalchemy import Column, BigInteger, String, Integer, Boolean, DateTime, Text, DECIMAL
-from app.models.base import Base
+from chatbot.models.base import Base
 
 class TestPricing(Base):
     __tablename__ = 'testpricing'
